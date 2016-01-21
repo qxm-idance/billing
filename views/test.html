@@ -1,0 +1,340 @@
+<div class="page-main">
+	<div class="title">
+	    Details of CDR Query
+	</div>
+	<div>
+	    <form class="form-horizontal clearfix">
+	    	<div class="form-group col-xs-12">
+	    		<label class="col-xs-2 control-label"><em>*</em>Billing Number</label>
+	    		<div class="col-xs-3"><input type="text" class="form-control"></div>	    		
+	    		<label class="col-xs-2 control-label">Account ID</label>
+	    		<div class="col-xs-3">
+	    			<input class="form-control col-xs-7">Only for RC/OTC
+	    		</div>
+	    	</div>
+	    	<div class="form-group col-xs-12">
+	    		<label class="col-xs-2 control-label">serviceId</label>
+                <div class="col-xs-3"><input type="text" class="form-control"></div>
+                <label class="col-xs-2 control-label"><em>*</em>Date Range Type</label>
+                <div class="col-xs-3">
+                    <div ui-checkbox data="rangeTypeData" key="text" as-value="value" checked-data="rangeTypeCheckedData" on-checked="onChecked2(checkedID2)"
+                         multi="0" ng-model="p.rangeType" space="3"></div>
+                </div>
+            </div>
+            <div class="form-group col-xs-12">
+	    		<label class="col-xs-2 control-label">Custom Date</label>
+	    		<div class="col-xs-3">
+					<p class=" input-group ui-datapicker pull-left col-xs-5" style="margin-right:10px;margin-bottom:10px;">
+					  <input type="text"  class="form-control ui-input" datepicker-popup="yyyy-MM-dd" datepicker-milliseconds
+					 ng-model="startDate" is-open="opened2" ng-click="opened2=1" show-weeks="true"/>
+					  <span class="input-group-btn">
+					    <button type="button" class="btn  btn-default" ng-click="$event.stopPropagation();opened2=1;"><i class="glyphicon glyphicon-calendar"></i></button>
+					  </span>
+					</p>
+					<label class="pull-left">to</label>
+					<p class="input-group ui-datapicker pull-left col-xs-5" style="margin-left:10px;">
+					   <input type="text"  class="form-control ui-input" datepicker-popup="yyyy-MM-dd" datepicker-milliseconds ng-model="endDate" is-open="opened3" ng-click="opened3=1" show-weeks="true"/>
+					   <span class="input-group-btn">
+					      <button type="button" class="btn  btn-default" ng-click="$event.stopPropagation();opened3=1;"><i class="glyphicon glyphicon-calendar"></i></button>
+					   </span>
+					</p>
+				</div>
+                <label class="col-xs-2 control-label">BillDate</label>
+                <div ui-select
+			        default="choose"
+			        ng-model="p.billDate"
+			        options="billDateData"
+			        key="text"
+			        as-value="value"
+			        class="col-xs-3"
+			    ></div>
+            </div>
+	    </form>
+	</div>
+    <div>{{p}}
+    	<ul class="count-tab-lists btn-group ">
+	        <li class="btn ui-btn ui-btn-primary"
+	            ng-repeat="item in typeData"
+	            ng-click="ontTypeChange()"
+	            ng-class="{'tab-selected':p.typeModel==$index,'first-tab':$first,'last-tab':$last}"
+	            ng-model="p.typeModel"
+	            btn-radio="'{{$index}}'">{{item.text}}</li>
+	    </ul>
+    {{voiceGridData}}
+        <!-- <div ng-if="p.typeModel=='0'"> -->
+            <table ui-grid
+                   items="voiceGridData"
+                   selected-items="ngGridModel"
+                   total-items="total"
+                   page-items="pageItems"
+                   current-page="currentPage"
+                   on-data-required="onGridPager(currentPage,pageItems)"
+                   selection-mode="None">
+                <thead>
+                <tr>
+                    <th field-name="a" display-name="Date" display-align="right"></th>
+                    <th field-name="b" display-name="Name"></th>
+                    <th field-name="c" display-name="B Number" ></th>
+                    <th field-name="d" display-name="Duration"></th>
+                    <th field-name="e" display-name="Charged"></th>
+                    <th field-name="f" display-name="Tax"></th>
+                    <th field-name="g" display-name="Roam Country"></th>
+                    <th field-name="h" display-name="Roam Operator"></th>
+                    <th field-name="i" display-name="Charged Duration"></th>
+                    <th field-name="j" display-name="Toll Fee"></th>
+                    <th field-name="k" display-name="Airtime Fee"></th>
+                    <th field-name="l" display-name="Connection Fee"></th>
+                    <th field-name="m" display-name="Call Category"></th>
+                    <th field-name="n" display-name="isBilled"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                   <td></td>
+                </tr>
+                </tbody>
+            </table>
+        <!-- </div> -->
+        <div ng-if="p.typeModel==1">
+            <table ui-grid
+                   items="gridData"
+                   selected-items="ngGridModel"
+                   total-items="total"
+                   page-items="pageItems"
+                   current-page="currentPage"
+                   on-data-required="onGridPager(currentPage,pageItems)"
+                   selection-mode="None">
+                <thead>
+                <tr>
+                    <th field-name="a" display-name="Date" display-align="right"></th>
+                    <th field-name="b" display-name="Time"></th>
+                    <th field-name="c" display-name="B Number" ></th>
+                    <th field-name="d" display-name="Charged"></th>
+                    <th field-name="e" display-name="Tax"></th>
+                    <th field-name="f" display-name="Roam Country"></th>
+                    <th field-name="g" display-name="Roam Operator"></th>
+                    <th field-name="h" display-name="Call Category"></th>
+                    <th field-name="i" display-name="Charged Duration"></th>
+                    <th field-name="j" display-name="isBilled"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <p>
+                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
+                                </span>{{gridItem.offerList[0].offerName_dsp}}
+                            </p>
+                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
+                        </div>
+                    </td>
+                    <td class="oper">
+                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-if="p.typeModel==2">
+            <table ui-grid
+                   items="gridData"
+                   selected-items="ngGridModel"
+                   total-items="total"
+                   page-items="pageItems"
+                   current-page="currentPage"
+                   on-data-required="onGridPager(currentPage,pageItems)"
+                   selection-mode="None">
+                <thead>
+                <tr>
+                    <th field-name="a" display-name="Date" display-align="right"></th>
+                    <th field-name="b" display-name="Time"></th>
+                    <th field-name="c" display-name="B Number" ></th>
+                    <th field-name="d" display-name="Charged"></th>
+                    <th field-name="e" display-name="Tax"></th>
+                    <th field-name="f" display-name="Roam Country"></th>
+                    <th field-name="i" display-name="Roam Operator"></th>
+                    <th field-name="g" display-name="Call Category"></th>
+                    <th field-name="h" display-name="isBilled"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <p>
+                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
+                                </span>{{gridItem.offerList[0].offerName_dsp}}
+                            </p>
+                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
+                        </div>
+                    </td>
+                    <td class="oper">
+                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-if="p.typeModel==3">
+            <table ui-grid
+                   items="gridData"
+                   selected-items="ngGridModel"
+                   total-items="total"
+                   page-items="pageItems"
+                   current-page="currentPage"
+                   on-data-required="onGridPager(currentPage,pageItems)"
+                   selection-mode="None">
+                <thead>
+                <tr>
+                    <th field-name="a" display-name="Date" display-align="right"></th>
+                    <th field-name="b" display-name="Time"></th>
+                    <th field-name="c" display-name="B Number" ></th>
+                    <th field-name="d" display-name="Charged"></th>
+                    <th field-name="e" display-name="Tax"></th>
+                    <th field-name="f" display-name="Roam Country"></th>
+                    <th field-name="i" display-name="Roam Operator"></th>
+                    <th field-name="g" display-name="Call Category"></th>
+                    <th field-name="h" display-name="isBilled"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <p>
+                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
+                                </span>{{gridItem.offerList[0].offerName_dsp}}
+                            </p>
+                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
+                        </div>
+                    </td>
+                    <td class="oper">
+                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-if="p.typeModel==4">
+            <table ui-grid
+                   items="gridData"
+                   selected-items="ngGridModel"
+                   total-items="total"
+                   page-items="pageItems"
+                   current-page="currentPage"
+                   on-data-required="onGridPager(currentPage,pageItems)"
+                   selection-mode="None">
+                <thead>
+                <tr>
+                    <th field-name="a" display-name="Date" display-align="right"></th>
+                    <th field-name="b" display-name="Time"></th>
+                    <th field-name="c" display-name="B Number" ></th>
+                    <th field-name="d" display-name="Charged"></th>
+                    <th field-name="e" display-name="Tax"></th>
+                    <th field-name="f" display-name="Roam Country"></th>
+                    <th field-name="i" display-name="Roam Operator"></th>
+                    <th field-name="g" display-name="Call Category"></th>
+                    <th field-name="h" display-name="isBilled"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <p>
+                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
+                                </span>{{gridItem.offerList[0].offerName_dsp}}
+                            </p>
+                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
+                        </div>
+                    </td>
+                    <td class="oper">
+                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-if="p.typeModel==5">
+            <table ui-grid
+                   items="gridData"
+                   selected-items="ngGridModel"
+                   total-items="total"
+                   page-items="pageItems"
+                   current-page="currentPage"
+                   on-data-required="onGridPager(currentPage,pageItems)"
+                   selection-mode="None">
+                <thead>
+                <tr>
+                    <th field-name="a" display-name="Date" display-align="right"></th>
+                    <th field-name="b" display-name="Time"></th>
+                    <th field-name="c" display-name="B Number" ></th>
+                    <th field-name="d" display-name="Charged"></th>
+                    <th field-name="e" display-name="Tax"></th>
+                    <th field-name="f" display-name="Roam Country"></th>
+                    <th field-name="i" display-name="Roam Operator"></th>
+                    <th field-name="g" display-name="Call Category"></th>
+                    <th field-name="h" display-name="isBilled"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <p>
+                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
+                                </span>{{gridItem.offerList[0].offerName_dsp}}
+                            </p>
+                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
+                        </div>
+                    </td>
+                    <td class="oper">
+                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-if="p.typeModel==6">
+            <table ui-grid
+                   items="gridData"
+                   selected-items="ngGridModel"
+                   total-items="total"
+                   page-items="pageItems"
+                   current-page="currentPage"
+                   on-data-required="onGridPager(currentPage,pageItems)"
+                   selection-mode="None">
+                <thead>
+                <tr>
+                    <th field-name="a" display-name="Date" display-align="right"></th>
+                    <th field-name="b" display-name="Time"></th>
+                    <th field-name="c" display-name="B Number" ></th>
+                    <th field-name="d" display-name="Charged"></th>
+                    <th field-name="e" display-name="Tax"></th>
+                    <th field-name="f" display-name="Roam Country"></th>
+                    <th field-name="i" display-name="Roam Operator"></th>
+                    <th field-name="g" display-name="Call Category"></th>
+                    <th field-name="h" display-name="isBilled"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div>
+                            <p>
+                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
+                                </span>{{gridItem.offerList[0].offerName_dsp}}
+                            </p>
+                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
+                        </div>
+                    </td>
+                    <td class="oper">
+                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

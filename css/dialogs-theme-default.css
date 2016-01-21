@@ -1,0 +1,9 @@
+.modal-content {background-color: #fff;border-color:#00b7ee;}
+.modal-header {border-bottom-color:#ccc;color: #fff;background-color: #00b7ee;}
+.modal-body {color:#333;}
+.modal-content .modal-close .close {color:#ffffff;text-shadow:none;opacity: 1;}
+.modal-footer {background-color: #fff;border-top-color:#ccc;}
+.modal-footer .btn{color: #ffffff;background-color: #00b7ee;border-color: #ccc;}
+.modal-footer .btn:hover{    background-color: #13AEDC;
+    border-color: #28B6E0;}
+.modal-title{color:#ffffff;}

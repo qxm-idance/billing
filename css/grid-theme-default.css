@@ -1,0 +1,17 @@
+.ui-grid{border-color: #ccc;color:#333;}
+.table-hover > tbody > tr:hover > td {background-color: #f8f8f8;}
+table.ui-grid.table-bordered > thead > tr > th,.table-bordered > tbody > tr > td ,.table-bordered > tfoot > tr > td{border-color:#ccc;}
+/*table.ui-grid tbody td {background-color: #182F44;}*/
+.ui-grid thead tr th{background-color: #f3f2f3;border-right-color:#ccc;}
+.table > tbody > tr.active > td {background: #f8f8f8;}
+/*分页*/
+table.ui-grid tfoot{background: #fff;}
+.ui-grid-pager-main li a:hover{color:#00baff;}
+.ui-grid-pager-main li a{color:#fff;}
+.ui-grid-pager-main .active{background-color: #0da2ff;}
+.ui-grid-pager-main .active a{color:#fff;}
+.ui-grid-pager-main .active a:hover {color:#fff !important;}
+.ui-grid-pager-main li  strong{color: #999;}
+.ui-grid-pager-main .pre-pager-btn {border-right-color: #104d6a;}
+.ui-grid-pager-main .pre-pager-btn { border-left-color: #104d6a;}
+.ui-grid-pager-main .pager-btn {border-left-color: #104d6a;}

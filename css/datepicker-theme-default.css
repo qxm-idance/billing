@@ -1,0 +1,11 @@
+.ui-datapicker .btn{background-color: #fff;color:#333;border-color: #fff;}
+.ui-datapicker .btn:hover,.ui-datapicker .btn:focus,.ui-datapicker .btn:active,.ui-datapicker .btn:visited{background-color: #00b7ee;color:#fff}
+.ui-datapicker .btn.active{background-color:#00b7ee;}
+.ui-datapicker .dropdown-menu{border-color:#ccc;}
+.ui-datapicker table tr:last-child th {color:#ffffff;}
+.ui-datapicker table thead tr.weeks {background-color: #00b7ee;}
+.ui-datapicker .text-info{color:#333; }
+.input-datapicker .timepicker-wrap .form-control {color:#ffffff;background-color: #0e5580;border-color:#0e5580;}
+.input-datapicker .timepicker-wrap {background-color: #1b364f;color:#ffffff;}
+.timepicker-wrap .form-control {color:#ffffff;background-color: #0e5580;border-color:#0e5580;}
+.timepicker-wrap {background-color: #1b364f;color:#ffffff;}

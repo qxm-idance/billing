@@ -1,0 +1,31 @@
+.page-main{float:left; margin:0 10px;}
+.page-main .page-title {padding:10px;border-bottom:1px dashed #dedede;margin-bottom:20px;}
+.page-main em{color: red;font-size:14px;}
+.page-main .page-title em{color: #0089d2;margin-right:5px;}
+.con-detail{line-height: 24px;
+    padding-left: 10px;}
+.btn-export{position: relative;bottom: -4px;}
+/*.page-main .tab-lists{width: 100%}*/
+.page-main .tab-lists li.btn{float:left;border-top-left-radius:5px !important;border-top-right-radius:5px !important;margin-right:10px;border:1px solid #b7b9c5;border-bottom: 1px solid #fff;}
+.page-main .tab-lists li:first-child {margin-left:10px}
+.page-main .tab-lists li .btn{border-radius:0;}
+/*.detail-list{float: left;}*/
+/*.detail-list table{width: 100%}*/
+.ui-grid thead tr th{background-color:#f3f2f3}
+.tab-lists.btn-group .btn{border-bottom-color:#fff;}
+.tab-lists li.btn{border-bottom-color:#fff;}
+.tab-lists li.btn.active, .tab-lists li.btn:active{border:1px solid #0089d2;background-color:#f3f2f3;border-bottom:1px solid #f3f2f3;color:#0089d2}
+.tab-lists li.btn:hover {color:#0089d2;background-color: #f3f2f3;border-color:#0089d2;border-bottom-color:#f3f2f3}
+.form-horizontal{margin-bottom:20px;}
+.tab-lists.btn-group .btn{background-color: #fff;border-color:#ccc;color:#333;}
+.tab-lists.btn-group>.btn:last-child:not(:first-child), .tab-lists .btn-group>.dropdown-toggle:not(:first-child){border-bottom-right-radius: 0px !important;}
+.tab-lists.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle){border-bottom-left-radius:0px;}
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default{    background-color: #13AEDC;
+    border-color: #28B6E0;
+    color: #fff;}
+
+.btn-default{background-color: #00b7ee;border-color: #28B6E0;color: #fff;}
+.select-disabled .ui-select .btn-primary{border-color: #dedede;
+    background-color: #f8f8f8;
+    color: #979797; cursor: not-allowed}
+.select-disabled .ui-select .btn > .caret{border-top-color: #979797}

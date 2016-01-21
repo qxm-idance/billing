@@ -1,0 +1,2 @@
+/*2016-01-14 04:01:00 */
+String.prototype.hasString=function(a){if("object"==typeof a){for(var b=0,c=a.length;c>b;b++)if(!this.hasString(a[b]))return!1;return!0}return-1!=this.indexOf(a)?!0:void 0};var main=angular.module("ui",["ui.router","ui.buttons","ui.checkbox","ui.transition","ui.modal","ui.dialogs","ui.position","ui.dropdown","ui.select","pascalprecht.translate","ui.datepicker","ui.timepicker","ui.grid","ui.inputSelect"]);

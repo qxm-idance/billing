@@ -1,0 +1,20 @@
+{
+  "name": "account",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "express": "3.4.5",
+    "ejs": "*",
+    "grunt": "~0.4.1",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.2",
+    "load-grunt-tasks": "~0.1.0",
+    "time-grunt": "~0.1.0",
+    "grunt-express-server": "0.4.5",
+    "grunt-contrib-less": "~0.8.2",
+    "grunt-contrib-jshint": "~0.10.0",
+      "grunt-contrib-cssmin": "~0.10.0",
+      "grunt-contrib-concat": "~0.1.1",
+      "grunt-contrib-uglify": "~0.4.0"
+  }
+}
