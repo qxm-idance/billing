@@ -88,7 +88,7 @@
             </ul>
             <div class="pull-right"><button class="btn btn-default btn-export" type="button" ng-click="export()"><span class="glyphicon glyphicon-share"></span></span> Export</button></div>
         </div>
-        <div ng-if="p.typeModel==voiceId">
+        <div ng-show="p.typeModel==voiceId">
             <table ui-grid
                    items="gridDataVoice"
                    total-items="totalVoice"
@@ -99,19 +99,19 @@
                    width="100%">
                 <thead>
                 <tr>
-                    <th field-name="date" display-name="Date"  ></th>
-                    <th field-name="time" display-name="Name" ></th>
-                    <th field-name="bNumber" display-name="B Number" ></th>
-                    <th field-name="duration" display-name="Duration" ></th>
-                    <th field-name="pay" display-name="Charged" enable-sorting=></th>
-                    <th field-name="tax" display-name="Tax" ></th>
-                    <th field-name="roamCountryId" display-name="Roam Country" ></th>
-                    <th field-name="roamOperator" display-name="Roam Operator" ></th>
-                    <th field-name="chargedDur" display-name="Charged Duration" enable-sorting="true"></th>
-                    <th field-name="tollFee" display-name="Toll Fee" ></th>
-                    <th field-name="airtimeFee" display-name="Airtime Fee" ></th>
-                    <th field-name="connectionFee" display-name="Connection Fee" ></th>
-                    <th field-name="callCategory" display-name="Call Category" ></th>
+                    <th field-name="date" display-name="DATE"  enable-sorting="true"></th>
+                    <th field-name="time" display-name="NAME" ></th>
+                    <th field-name="bNumber" display-name="B_NUMBER" ></th>
+                    <th field-name="duration" display-name="DURATION" ></th>
+                    <th field-name="pay" display-name="CHARGED" enable-sorting=></th>
+                    <th field-name="tax" display-name="TAX" ></th>
+                    <th field-name="roamCountryId" display-name="ROAM_COUNTRY" ></th>
+                    <th field-name="roamOperator" display-name="ROAM_OPERATOR" ></th>
+                    <th field-name="chargedDur" display-name="Charged_Duration" ></th>
+                    <th field-name="tollFee" display-name="Toll_Fee" ></th>
+                    <th field-name="airtimeFee" display-name="Airtime_Fee" ></th>
+                    <th field-name="connectionFee" display-name="Connection_Fee" ></th>
+                    <th field-name="callCategory" display-name="Call_Category" ></th>
                     <th field-name="isBilled" display-name="isBilled" ></th>
                 </tr>
                 </thead>
@@ -131,7 +131,7 @@
                 <div class=""></div>
             </div>
          </div>
-        <div ng-if="p.typeModel==smsId">
+        <div ng-show="p.typeModel==smsId">
             <table ui-grid
                    items="smsGridData"
                    selected-items="smsGridData"
@@ -143,7 +143,7 @@
                    width="100%">
                 <thead>
                 <tr>
-                    <th field-name="a" display-name="Date" display-align="right"></th>
+                    <th field-name="a" display-name="Date" display-align="right" enable-sorting="true"></th>
                     <th field-name="b" display-name="Time"></th>
                     <th field-name="c" display-name="B Number" ></th>
                     <th field-name="d" display-name="Charged"></th>
@@ -173,7 +173,7 @@
                 </tbody>
             </table>
         </div>
-        <div ng-if="p.typeModel==mmsId">
+        <div ng-show="p.typeModel==mmsId">
             <table ui-grid
                    items="mmsGridData"
                    selected-items="ngGridModel"
@@ -213,7 +213,7 @@
                 </tbody>
             </table>
         </div>
-        <div ng-if="p.typeModel==serviceId">
+        <div ng-show="p.typeModel==serviceId">
             <table ui-grid
                    items="serviceGridData"
                    selected-items="ngGridModel"
@@ -253,7 +253,7 @@
                 </tbody>
             </table>
         </div>
-        <div ng-if="p.typeModel==ismpId">
+        <div ng-show="p.typeModel==ismpId">
             <table ui-grid
                    items="ismpGridData"
                    selected-items="ngGridModel"
@@ -293,7 +293,7 @@
                 </tbody>
             </table>
         </div>
-        <div ng-if="p.typeModel==recurringId">
+        <div ng-show="p.typeModel==recurringId">
             <table ui-grid
                    items="recurrGridData"
                    selected-items="ngGridModel"
@@ -333,7 +333,7 @@
                 </tbody>
             </table>
         </div>
-        <div ng-if="p.typeModel==OneTimeChargeId">
+        <div ng-show="p.typeModel==OneTimeChargeId">
             <table ui-grid
                    items="onetimeGridData"
                    total-items="total"

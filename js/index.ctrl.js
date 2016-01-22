@@ -1,4 +1,4 @@
-main.controller('indexCtrl', ['$scope','dialogs','CS','$timeout','$filter','dialogs',function ($scope,dialogs,CS,$timeout,$filter,dialogs){
+main.controller('indexCtrl', ['$scope','dialogs','CS','$timeout','$filter','dialogs','$translate',function ($scope,dialogs,CS,$timeout,$filter,dialogs,$translate){
     $scope.voiceId=voiceId;
     $scope.smsId=smsId;
     $scope.ismpId=ismpId;
