@@ -29,3 +29,4 @@
     background-color: #f8f8f8;
     color: #979797; cursor: not-allowed}
 .select-disabled .ui-select .btn > .caret{border-top-color: #979797}
+.ui-grid-sort{background-color: red;width:10px; height:10px;}

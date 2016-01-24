@@ -1714,7 +1714,8 @@ var uiGrid;
         }
         // (gridOptions.enableSorting&&columnOptions.enableSorting!==false)||columnOptions.enableSorting
         if (!$templateCache.get(uiGrid.columnSortTemplateId)) {
-            $templateCache.put(uiGrid.columnSortTemplateId, '<div ng-click="toggleSorting(columnOptions.fieldName)"' + ' class="' + uiGrid.columnSortCssClass + '" ></div>');
+            $templateCache.put(uiGrid.columnSortTemplateId, '<div ng-click="toggleSorting(columnOptions.fieldName)"' + ' class="' + uiGrid.columnSortCssClass+ '"'+
+             'ng-class="{\'ui-grid-sort-order-normal glyphicon glyphicon-chevron-up\':columnOptions.enableSorting,\'ui-grid-sort-order-reverse glyphicon glyphicon-chevron-down\':!columnOptions.enableSorting}"></div>');
         }
         if (!$templateCache.put(uiGrid.cellFooterTemplateId)) {
             $templateCache.put(uiGrid.cellFooterTemplateId, '<div class="' + uiGrid.footerCssClass + '">' +
@@ -1725,8 +1726,8 @@ var uiGrid;
         if (!$templateCache.get(uiGrid.footerGlobalFilterTemplateId)) {
             $templateCache.put(uiGrid.footerGlobalFilterTemplateId,
                     '<span ng-show="gridOptions.enableFiltering" class="pull-left form-group">' +
-                    '  <input class="form-control" type="text" ng-model="gridOptions.filterBy" ng-keypress="speedUpAsyncDataRetrieval($event)" ' +
-                    'ng-attr-placeholder="{{\'Search\'|' + uiGrid.translateFilter + ':gridOptions.locale}}"></input>' + '</span>');
+                    '  < class="form-control" type="text" ng-model="gridOptions.filterBy" ng-keypress="speedUpAsyncDataRetrieval($event)" ' +
+                    'ng-attr-placeholder="{{\'Search\'|' + uiGrid.translateFilter + ':gridOptions.locale}}">' + '</span>');
         }
         if (!$templateCache.get(uiGrid.footerPagerTemplateId)) {
             $templateCache.put(uiGrid.footerPagerTemplateId, '<div class="ui-grid-pager"><div class="ui-grid-pager-add pull-left">' +

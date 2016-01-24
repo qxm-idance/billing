@@ -6,6 +6,5 @@ String.prototype.hasString=function(source){
     }
     if(this.indexOf(source) != -1) return !0;
 };
-var main=angular.module('ui',['ui.router','ui.buttons','ui.checkbox','ui.transition','ui.modal','ui.dialogs',
-    'ui.position','ui.dropdown','ui.select','pascalprecht.translate','ui.datepicker','ui.timepicker','ui.grid','ui.inputSelect']);
+var main=angular.module('ui',['ui.router','ui.buttons','ui.checkbox','ui.transition','ui.modal','ui.dialogs', 'ui.position','ui.dropdown','ui.select','pascalprecht.translate','ui.datepicker','ui.timepicker','ui.grid','ui.inputSelect']);
 
