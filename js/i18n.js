@@ -9,7 +9,7 @@ main.config(['$translateProvider', function($translateProvider) {
         'ROAM_COUNTRY':'Roam Country',
         'ROAM_OPERATOR':'Roam Operator',
         'Charged_Duration':'Charged Duration',
-        'Toll_Fee':'Toll_Fee',
+        'Toll_Fee':'Toll Fee',
         'Airtime_Fee':'Airtime Fee',
         'Connection_Fee':'Connection Fee',
         'Call_Category':'Call Category',

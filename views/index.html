@@ -96,7 +96,7 @@
                    current-page="pagingOptionsVoice.start"
                    on-data-required="onGridPagerVoice(currentPage,pageItems)"
                    selection-mode="None"
-                   width="100%">
+                  >
                 <thead>
                 <tr>
                     <th field-name="date" display-name="DATE"  enable-sorting="true"></th>
@@ -128,7 +128,20 @@
                 </tbody>
             </table>
             <div>
-                <div class=""></div>
+                <form class="form-horizontal clearfix">
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Charged Time Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{1}}</p></div>
+                        <label class="col-xs-2 control-label">Duration Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{2}}</p></div>
+                        <label class="col-xs-2 control-label">Charged Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{3}}</p></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Grand Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{4}}</p></div>
+                    </div>
+                </form>
             </div>
          </div>
         <div ng-show="p.typeModel==smsId">
@@ -157,21 +170,24 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>
-                        <div>
-                            <p>
-                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
-                                </span>{{gridItem.offerList[0].offerName_dsp}}
-                            </p>
-                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
-                        </div>
-                    </td>
-                    <td class="oper">
-                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
-                    </td>
                 </tr>
                 </tbody>
             </table>
+            <div>
+                <form class="form-horizontal clearfix">
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">SMS Count:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{1}}</p></div>
+                        <label class="col-xs-2 control-label">Charged Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{3}}</p></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Grand Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{4}}</p></div>
+                    </div>
+                </form>
+            </div>
+        </div>
         </div>
         <div ng-show="p.typeModel==mmsId">
             <table ui-grid
@@ -197,21 +213,24 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>
-                        <div>
-                            <p>
-                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
-                                </span>{{gridItem.offerList[0].offerName_dsp}}
-                            </p>
-                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
-                        </div>
-                    </td>
-                    <td class="oper">
-                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
-                    </td>
+
                 </tr>
                 </tbody>
             </table>
+            <div>
+                <form class="form-horizontal clearfix">
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">MMS Count:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{1}}</p></div>
+                        <label class="col-xs-2 control-label">Charged Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{3}}</p></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Grand Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{4}}</p></div>
+                    </div>
+                </form>
+            </div>
         </div>
         <div ng-show="p.typeModel==serviceId">
             <table ui-grid
@@ -237,21 +256,24 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>
-                        <div>
-                            <p>
-                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
-                                </span>{{gridItem.offerList[0].offerName_dsp}}
-                            </p>
-                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
-                        </div>
-                    </td>
-                    <td class="oper">
-                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
-                    </td>
+
                 </tr>
                 </tbody>
             </table>
+            <div>
+                <form class="form-horizontal clearfix">
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Volume Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{1}}</p></div>
+                        <label class="col-xs-2 control-label">Charged Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{3}}</p></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Grand Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{4}}</p></div>
+                    </div>
+                </form>
+            </div>
         </div>
         <div ng-show="p.typeModel==ismpId">
             <table ui-grid
@@ -277,21 +299,22 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>
-                        <div>
-                            <p>
-                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
-                                </span>{{gridItem.offerList[0].offerName_dsp}}
-                            </p>
-                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
-                        </div>
-                    </td>
-                    <td class="oper">
-                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
-                    </td>
+
                 </tr>
                 </tbody>
             </table>
+            <div>
+                <form class="form-horizontal clearfix">
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Charged Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{3}}</p></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Grand Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{4}}</p></div>
+                    </div>
+                </form>
+            </div>
         </div>
         <div ng-show="p.typeModel==recurringId">
             <table ui-grid
@@ -317,21 +340,22 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>
-                        <div>
-                            <p>
-                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
-                                </span>{{gridItem.offerList[0].offerName_dsp}}
-                            </p>
-                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
-                        </div>
-                    </td>
-                    <td class="oper">
-                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
-                    </td>
+
                 </tr>
                 </tbody>
             </table>
+            <div>
+                <form class="form-horizontal clearfix">
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Charged Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{3}}</p></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Grand Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{4}}</p></div>
+                    </div>
+                </form>
+            </div>
         </div>
         <div ng-show="p.typeModel==OneTimeChargeId">
             <table ui-grid
@@ -356,21 +380,22 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>
-                        <div>
-                            <p>
-                                <span style="width:20px" ng-show="gridItem.offerList.length>1" ng-click="detailCliked=!detailCliked;" class="glyphicon" ng-class="{'glyphicon-plus':detailCliked,'glyphicon-minus':!detailCliked}" >
-                                </span>{{gridItem.offerList[0].offerName_dsp}}
-                            </p>
-                            <p ng-show="!detailCliked" ng-repeat="item in gridItem.offerList.slice(1)" ><span style="width:20px;display:inline-block"></span>{{item.offerName_dsp}}</p>
-                        </div>
-                    </td>
-                    <td class="oper">
-                        <a ng-click="clickDetails(acctId,gridItem.instalId)"><span class="account-icon-s icon-free" title="{{'SEE_DETAILS' | translate}}"></span></a>
-                    </td>
+
                 </tr>
                 </tbody>
             </table>
+            <div>
+                <form class="form-horizontal clearfix">
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Charged Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{3}}</p></div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <label class="col-xs-2 control-label">Grand Total:</label>
+                        <div class="col-xs-2"><p class="form-control-static">{{4}}</p></div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
